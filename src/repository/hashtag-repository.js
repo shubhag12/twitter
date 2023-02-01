@@ -8,14 +8,15 @@ class HashtagRepository {
       console.log(error);
     }
   }
- async bulkCreate(data){
+  async bulkCreate(data) {
     try {
-        const tags=await Hashtag.insertMany(data);
+      const tags = await Hashtag.insertMany(data);
+      return tags;
     } catch (error) {
-     console.log(error);   
+      console.log(error);
     }
   }
- async get(id) {
+  async get(id) {
     try {
       const tag = await Hashtag.findById(id);
       return tag;
@@ -36,6 +37,16 @@ class HashtagRepository {
     try {
       const response = await Hashtag.find().skip(offset).limit(limit);
       return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async findByName(data) {
+    try {
+      const tags = await Hashtag.find({
+        title: data,
+      });
+      return tags;
     } catch (error) {
       console.log(error);
     }
