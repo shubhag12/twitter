@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
  
-const likeSchema=new mongoose.schema({
+const likeSchema=new mongoose.Schema({
     onModel:{
         type:String,
         required:true,
         enum:['Tweet','Comment']
     },
-    likeable:{
+    likable:{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
         refpath:'onModel'

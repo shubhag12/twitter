@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-export const hashtagSchema = new mongoose.Schema(
+ const hashtagSchema = new mongoose.Schema(
   {
     title: {
       type: String,

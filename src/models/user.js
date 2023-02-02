@@ -2,16 +2,16 @@ import mongoose from 'mongoose'
 
 const userschema=new mongoose.Schema({
     email:{
-        type:string,
+        type:String,
         required:true,
         unique:true,
     },
     password:{
-        type:string,
+        type:String,
         required:true,
     },
     name:{
-        type:string,
+        type:String,
         required:true
     }
 },{
@@ -19,4 +19,4 @@ const userschema=new mongoose.Schema({
 })
 
 const User=mongoose.model('User',userschema)
-export default Userl
+export default User
