@@ -28,3 +28,7 @@ pagination on tweets
 user auth 
 every tweet might be having a hashtag
 
+
+learnings from this project 
+learn how to create a model of likes in which we can extend our likes to two different category in which it can be wheter it is like on post or like on a comment then in the same model we can do all of these things refer to the like model 
+
