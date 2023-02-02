@@ -7,8 +7,6 @@ class LikeService {
   }
 
   async toggleLike(modelId, modelType, userId) {
-    //we will call '/api/v1/likes/toggle?id=modelid&type=tweet'
-
     if (modelType == "Tweet") {
       var likeable = await this.tweetRepository.find(modelId);
     } else if (modelType == "Comment") {
@@ -20,7 +18,7 @@ class LikeService {
       likable: modelId,
       user: userId,
     });
-    console.log(exists)
+
     if (exists) {
       likeable.likes.pull(exists.id);
       await likeable.save();
@@ -32,13 +30,12 @@ class LikeService {
         likable: modelId,
         user: userId,
       });
-      
+
       likeable.likes.push(newLike);
       await likeable.save();
       var added = true;
-      console.log('shubh');
     }
     return added;
   }
 }
-export default LikeService
+export default LikeService;
