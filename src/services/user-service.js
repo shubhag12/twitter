@@ -14,5 +14,15 @@ class UserService {
       throw { error };
     }
   }
+  async getUserByEmail(email){
+    try {
+        const user=await this.userRepository.findby({email})
+        return user;
+    } catch (error) {
+        console.log("error at user controller");
+        throw{error};
+    }
+    
+  }
 }
 export default UserService;
