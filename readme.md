@@ -35,3 +35,11 @@ learn how to create a model of likes in which we can extend our likes to two dif
 
 toggle like feature where user can like a post if it not like or it can remove the like in a same feature/button
 
+difficulties how to show that the comment is on the commment
+like in previous project authentication we have set up from scratcj creating jwt tokens and authenticating
+
+authentication using passport library in this project
+
+bcrypt to encrypt the password
+hook in user model  to presave the encrypted password
+
