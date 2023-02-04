@@ -7,9 +7,13 @@ import { createcomment } from '../../controller/comment-controller.js';
 import { signup,login } from '../../controller/user-controller.js';
 import { authenticate } from '../../middlewares/authenticate.js';
 
+
+
+
+
 const router=express.Router();
 
-router.post('/tweets',authenticate,createTweet)
+router.post('/tweets',createTweet)
 router.post('/likes/toggle',toggleLike)
 router.post('/comments',authenticate,createcomment)
 router.get('/tweets/:id',getTweet)

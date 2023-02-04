@@ -9,8 +9,8 @@ import dotenv from "dotenv";
 dotenv.config();
 aws.config.update({
   region: process.env.AWS_REGION,
-  acess_key: process.env.secret_access_key,
-  secret_acess_key: process.env.acess_key_id,
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  accessSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 const s3 = new aws.S3();
 
@@ -18,7 +18,7 @@ const upload = multer({
   storage: multerS3({
     s3: s3,
     bucket: process.env.bucket_name,
-    acl: "public-read",
+    
     metadata: function (req, file, cb) {
       cb(null, { fieldName: file.fieldname });
     },
