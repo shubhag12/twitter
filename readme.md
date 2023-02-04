@@ -43,3 +43,5 @@ authentication using passport library in this project
 bcrypt to encrypt the password
 hook in user model  to presave the encrypted password
 
+know able to know how to store static images in amazon aws
+
